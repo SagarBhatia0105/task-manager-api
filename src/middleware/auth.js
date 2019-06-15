@@ -8,6 +8,8 @@ const auth = async (req, res, next) =>{
       const user = await User.findOne({_id: decoded._id, 'tokens.token': token})
 
       if(!user){
+        console.log("Decoded ", decoded);
+        console.log("Token ", token);
         throw new Error()
       }
 
