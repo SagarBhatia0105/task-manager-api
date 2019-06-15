@@ -7,6 +7,7 @@ const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey (process.env.SENDGRID_API_KEY)
 
 const sendWelcomeEmail = (email, name) => {
+  console.log("in the function");
   sgMail.send({
     to: email,
     from: 'sagar101283cse@gmail.com',
@@ -15,7 +16,6 @@ const sendWelcomeEmail = (email, name) => {
     //to inject variables
     text: `Welcome to the app, ${name}. Thanks for joining in.`,
     //to add the html features
-    html: ''
   })
 }
 
