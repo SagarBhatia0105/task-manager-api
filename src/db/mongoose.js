@@ -3,7 +3,7 @@ const validator = require('validator');
 
 console.log(process.env.DATABASE_URL);
 
-mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser : true,
   useCreateIndex : true
 })
